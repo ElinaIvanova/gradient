@@ -3,6 +3,7 @@ html {
 }
 
 body {
+	overflow: hidden;
 	width: 100vw;
     height: 100vh;
     margin: 0;
@@ -87,24 +88,31 @@ body {
 	text-align: center;
 	font-family: inherit;
 	font-size: 2rem;
+	font-weight: bold;
+	color: transparent;
+	background: linear-gradient(to right, #BD1F97, #6814D1);
+	background: -webkit-linear-gradient(to right, #BD1F97, #6814D1);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
-@media (max-width: 500px) and (orientation: portrait) {
-	.popup {
-		display: flex;
-    }
+
+/* Media Queries */
+
+.portrait-orientation .popup {
+	display: flex;
 }
 
-@media (max-width: 500px) and (orientation: landscape) {
-	.main {
-		background: rgba(0, 0, 0, .1);
-	}
-
-	.button::after {
-	    content: "Rotation isn't my thing";
-    }
-
-    .popup {
-		display: none;
-    }
+.landscape-orientation .main {
+	background: rgba(0, 0, 0, .1);
 }
+
+.landscape-orientation .button::after {
+	content: "Rotation isn't my thing";
+}
+
+.landscape-orientation .popup {
+	display: none;
+}
+
