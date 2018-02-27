@@ -8,8 +8,19 @@ function onHover(event) {
   console.log('hello there');
 }
 
+function onOrientationChange() {
+  console.log(screen.orientation);
+}
+
+function onResize() {
+  console.log(screen.width, screen.height);
+}
+
 function init() {
   button.addEventListener('mousemove', onHover);
+
+  window.addEventListener('resize', onResize);
+  window.addEventListener('orientationchange', onOrientationChange);
 }
 
 init();
